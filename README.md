@@ -30,3 +30,11 @@ git branch -M main
 git push origin main
 '''
 
+dvc repro
+
+git add .
+
+git commit -m "stage 1 complete"
+
+git push origin main
+
