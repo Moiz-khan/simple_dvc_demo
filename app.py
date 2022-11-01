@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import os
 import numpy as np
 from prediction_service import prediction
-
+import joblib
 
 webapp_root = "webapp"
 
@@ -10,6 +10,24 @@ static_dir = os.path.join(webapp_root, "static")
 template_dir = os.path.join(webapp_root, "templates")
 
 app = Flask(__name__, static_folder=static_dir,template_folder=template_dir)
+
+# def predict(data):
+#     config = read_params(params_path)
+#     model_dir_path = config['webapp_model_dir']
+#     model = joblib.load(model_dir_path)
+#     prediction = model.predict(data)
+#     return prediction[0]
+
+# def api_response(request):
+#     try:
+#         data =np.array([list(request.json.values())])
+#         response = predict(data)
+#         return response
+
+#     except Exception as e:
+#         print(e)
+#         error={"error": "Something wrong"}
+#         return error
 
 
 @app.route("/", methods=["GET", "POST"])
