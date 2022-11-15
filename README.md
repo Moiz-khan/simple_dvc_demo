@@ -38,3 +38,11 @@ git commit -m "stage 1 complete"
 
 git push origin main
 
+step 
+run on other terminal
+ mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 127.0.0.1 -p 5000
+
+step 
+dvc repro
+
+##changing params and experiment then compare the model and than put it for production
